@@ -3,18 +3,14 @@
 A local, privacy-friendly voice assistant for Raspberry Pi that **listens and speaks in both Chinese and English**, runs **fully offline** after first-time setup, and supports **USB microphone + Bluetooth/analog speaker** via PipeWire.  
 一个运行在树莓派上的本地语音助手：**能同时识别并回答中英文**，首轮部署后可**离线运行**，通过 PipeWire 支持 **USB 麦克风 + 蓝牙/有线音箱**。
 
-> This is a **new independent project**. It does **not** reference or mention any other project names.  
-> 本仓库是**全新独立项目**，**不包含**任何其他项目名称或描述。
+> This is a **new independent project**. 
+> 本仓库是**全新独立项目**。
 
 ---
 
 ## ✨ Features | 功能特性
 - **Bilingual ASR + TTS**：Multi-lingual Whisper for speech-to-text; English & Chinese TTS pipelines with automatic voice selection.  
   **中英同听同说**：多语种 Whisper 识别；中/英两套 TTS 管线，自动按内容切换音色。
-- **Streaming reply**：LLM streams tokens; sentences are detected and **spoken while text is still generating**.  
-  **边出字边出声**：LLM 流式输出，按句切分后即时播报。
-- **Robust audio I/O**：PipeWire capture/playback with adaptive VAD and fallback combos.  
-  **稳健音频链路**：PipeWire 录放音，带自适应 VAD 与多组合回退。
 - **Offline-friendly**：Works without internet once models/voices are cached.  
   **离线友好**：模型与语音包缓存后可纯离线运行。
 - **Local LLM via Ollama**：Small & fast by default; easily swappable.  
@@ -119,10 +115,9 @@ python3 chatbot.py --test
 ---
 
 ## 🧠 How it works | 工作流
-1. **Capture**：PipeWire 录音，RMS 噪声标定与简易 VAD 截段  
-2. **ASR**：Faster-Whisper 多语识别（贪心、低延迟参数）  
-3. **LLM**：本地 Ollama，提示词强制**跟随用户语言**、不复述问题、信息不足只问一个关键问题  
-4. **TTS**：Kokoro 中/英两套管线；**按句**投递到队列并**整句单次**播放，减少“叠字/抖动”
+1. **ASR**：Faster-Whisper 多语识别（贪心、低延迟参数）  
+2. **LLM**：本地 Ollama，提示词强制**跟随用户语言**、不复述问题、信息不足只问一个关键问题  
+3. **TTS**：Kokoro 中/英两套管线；**按句**投递到队列并**整句单次**播放，减少“叠字/抖动”
 
 ---
 
@@ -166,4 +161,3 @@ connect <mac>
 ## 常见问题
 - 声卡列表频繁变化 → 重启 `wireplumber/pipewire-pulse`
 - 蓝牙接通但无声 → 在 `wpctl status` 里确认该 Sink 是否为默认（`*` 标记）
-```
