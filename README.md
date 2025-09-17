@@ -82,11 +82,7 @@ LLM_MODEL=gemma3:270m：Ollama 模型名
 
 --mic-target <id-or-name>，--test
 
-🧠 How it works | 工作流
-
-Capture：PipeWire 录音，VAD 截段
-
-ASR：Faster-Whisper 多语识别，低延迟参数
+## 🧠 How it works | 工作流
 
 LLM：本地 Ollama，提示词强制跟随用户语言、不复述问题
 
@@ -102,15 +98,15 @@ TTS 404：音色缺失自动回退；可预缓存对应 *.pt
 
 更智能：将 LLM_MODEL 换成 llama3.2:1b-instruct 或更强（注意树莓派性能）
 
-🔒 Privacy | 隐私
+## 🔒 Privacy | 隐私
 
 默认本地运行；联网仅在首次下载模型/语音包。设置 HF_HUB_OFFLINE=1 可强制离线。
 
-📄 License | 许可协议
+## 📄 License | 许可协议
 
 MIT（见 LICENSE）。
 
-🙌 Acknowledgements | 致谢
+## 🙌 Acknowledgements | 致谢
 
 本项目初始硬件接线、蓝牙/音频配置以及整体架构思路均参考了 OminousIndustries/Bob — 特此致谢！
 The initial hardware wiring, Bluetooth/audio setup, and overall architecture of this project were inspired by OminousIndustries/Bob — many thanks for the excellent reference!
