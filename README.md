@@ -34,7 +34,7 @@ sudo apt install -y \
   bluez \
   pipewire pipewire-pulse wireplumber \
   alsa-utils libspa-0.2-bluetooth
-
+```bash
 sudo systemctl enable --now bluetooth
 systemctl --user enable --now pipewire wireplumber pipewire-pulse
 sudo loginctl enable-linger $USER
@@ -44,7 +44,7 @@ sudo loginctl enable-linger $USER
 在 bluetoothctl 完成 pair/trust/connect；用 wpctl status 查找 Sink ID 并设为默认；用 pw-play 测试输出。
 
 3) Project setup | 项目创建
-
+```bash
 mkdir -p ~/voice-chatbot && cd ~/voice-chatbot
 python3 -m venv .venv
 source .venv/bin/activate
@@ -52,7 +52,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 4) Install Ollama & a local model | 安装 Ollama 与本地模型
-
+```bash
 curl -fsSL https://ollama.com/install.sh | sh
 sudo systemctl enable --now ollama
 ollama pull gemma3:270m          # 默认演示模型；可换更强模型
