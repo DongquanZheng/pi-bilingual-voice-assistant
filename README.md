@@ -26,6 +26,7 @@ A local, privacy-friendly voice assistant for Raspberry Pi that **listens and sp
 ## 🚀 Quick Start | 快速开始
 
 1) System packages & services | 安装系统包并启用服务
+
 ```bash
 sudo apt update
 sudo apt install -y \
@@ -39,9 +40,11 @@ systemctl --user enable --now pipewire wireplumber pipewire-pulse
 sudo loginctl enable-linger $USER
 
 2) Bluetooth speaker (optional) | 配对蓝牙音箱（可选）
+
 在 bluetoothctl 完成 pair/trust/connect；用 wpctl status 查找 Sink ID 并设为默认；用 pw-play 测试输出。
 
 3) Project setup | 项目创建
+
 mkdir -p ~/voice-chatbot && cd ~/voice-chatbot
 python3 -m venv .venv
 source .venv/bin/activate
@@ -49,12 +52,14 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 4) Install Ollama & a local model | 安装 Ollama 与本地模型
+
 curl -fsSL https://ollama.com/install.sh | sh
 sudo systemctl enable --now ollama
 ollama pull gemma3:270m          # 默认演示模型；可换更强模型
 ollama run gemma3:270m "hello"
 
 5) Configure audio & run | 配置音频并启动
+
 用 wpctl status 找到 USB 麦克风 Source ID（如 66）
 启动：
 MIC_TARGET=66 python3 chatbot.py
