@@ -134,9 +134,9 @@ python3 chatbot.py --test
 
 ---
 
-## 🔒 Privacy | 隐私
-默认本地运行；联网仅在首次下载模型/语音包时发生。设置 `HF_HUB_OFFLINE=1` 可强制离线。
-
+## 🎉 Acknowledgments | 致谢
+本项目最初配置与蓝牙/音频部分参考了 OminousIndustries/Bob 的硬件连接与系统设置思路，特此致谢。
+The initial hardware wiring and Bluetooth/audio sections were inspired by OminousIndustries/Bob — many thanks for the great reference!
 ---
 
 ## 📄 License | 许可协议
@@ -167,6 +167,3 @@ connect <mac>
 - 声卡列表频繁变化 → 重启 `wireplumber/pipewire-pulse`
 - 蓝牙接通但无声 → 在 `wpctl status` 里确认该 Sink 是否为默认（`*` 标记）
 ```
-
----
-
