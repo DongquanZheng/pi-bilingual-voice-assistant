@@ -6,9 +6,6 @@ A local, privacy-friendly voice assistant for Raspberry Pi that **listens and sp
 ## ✨ Features | 功能特性
 - **Bilingual ASR + TTS**: multi-lingual Whisper for speech-to-text; English + Chinese TTS pipelines with automatic voice selection.  
   **中英同听同说**：多语种 Whisper 识别；中/英双 TTS 管线，自动按内容切换音色。
-- **Streaming reply**: LLM streams tokens; sentences are detected and **spoken while text is still generating**.  
-  **边出字边出声**：LLM 流式输出，按句切分后即时播报。
-- **Robust audio I/O**: PipeWire capture/playback with adaptive VAD and fallback combos.  
   **稳健音频链路**：PipeWire 录放音，带自适应 VAD 与多组合回退。
 - **Offline-friendly**: Works without internet once models/voices are cached.  
   **离线友好**：模型与语音包缓存后可纯离线。
