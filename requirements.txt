@@ -1,0 +1,10 @@
+```txt
+faster-whisper
+kokoro
+ollama
+numpy
+ordered-set
+jieba
+pypinyin
+gpiozero
+```
